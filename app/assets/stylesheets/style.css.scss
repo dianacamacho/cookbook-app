@@ -2,3 +2,14 @@ body {
   font-family: Futura, "Trebuchet MS", Arial, sans-serif;
   background-image: url("paper_1_@2X.png");
 }
+
+.thumbnail {
+  height: 600px;
+
+  img {
+    max-height: 150px;
+    display: block;
+    margin: 10px auto
+  }
+}
+

@@ -1,0 +1,35 @@
+<h1>Edit recipe</h1>
+
+  <%= form_tag "/recipes/#{@recipe.id}", method: :patch do %>
+
+  <div>
+    <p class="label_tag"><%= label_tag "Title:" %></p>
+     <%= text_field_tag :name, @recipe.title %>
+  </div>
+
+  <div>
+    <p class="label_tag"><%= label_tag "Image URL:" %></p>
+     <%= text_field_tag :image, @recipe.image %>
+  </div>
+
+  <div>
+    <p class="label_tag"><%= label_tag "Chef:" %></p>
+     <%= text_field_tag :chef, @recipe.chef %>
+  </div>
+
+  <div>
+    <p class="label_tag"><%= label_tag "Ingredients:" %></p>
+    <%= text_field_tag :ingredients, @recipe.ingredients %>
+  </div>
+
+  <div>
+    <p class="label_tag"><%= label_tag "Directions:" %></p>
+    <%= text_field_tag :directions, @recipe.directions %>
+  </div>
+
+  <div id="submit-new"><%= submit_tag "Update Recipe" %></div>
+
+  <% end %>
+
+
+<p id="edit-delete-button"><button id="delete_button_edit"><a data-confirm="Are you sure you want to delete recipe?" data-method="delete" href="/recipes/<%= @recipe.id%>" rel="nofollow">Delete Recipe</a></button></p>

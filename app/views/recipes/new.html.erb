@@ -1,0 +1,34 @@
+<h1>Add new recipe</h1>
+
+  <%= form_tag '/recipes', method: :post do %>
+
+  <div>
+    <p class="label_tag"><%= label_tag "Title:" %></p>
+     <%= text_field_tag :name%>
+  </div>
+
+  <div>
+    <p class="label_tag"><%= label_tag "Image URL:" %></p>
+     <%= text_field_tag :image %>
+  </div>
+
+  <div>
+    <p class="label_tag"><%= label_tag "Chef:" %></p>
+     <%= text_field_tag :chef %>
+  </div>
+
+  <div>
+    <p class="label_tag"><%= label_tag "Ingredients:" %></p>
+    <%= text_field_tag :ingredients %>
+  </div>
+
+  <div>
+    <p class="label_tag"><%= label_tag "Directions:" %></p>
+    <%= text_field_tag :directions %>
+  </div>
+
+  <div id="submit-new"><%= submit_tag "Submit New Recipe" %></div>
+
+  <% end %>
+
+

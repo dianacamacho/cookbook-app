@@ -1,4 +1,23 @@
-<h1><%= @recipe.title %></h1>
-<h2><%= @recipe.chef %></h2>
-<h3><%= @recipe.title %></h3>
-<h3><%= @recipe.directions %></h3>
+<h2><%= @recipe.title %></h1>
+<h3><%= @recipe.chef %></h3>
+<p>Updated on: <%= @recipe.friendly_updated_at %></p>
+
+<h3>Prep time: <%= @recipe.friendly_prep_time %></h3>
+
+<h3>Ingredients:</h3>
+<ul>
+  <% @ingredient_list.each do |ingredient| %>
+    <li><%= ingredient %></li>
+  <% end %>
+</ul>
+
+<h3>Directions:</h3>
+<ol>
+  <% @directions_list.each do |step| %>
+    <li><%= step %></li>
+  <% end %>
+</ol>
+
+<p id="show-edit-button"><button id="edit_button_show"><a data-confirm="Are you sure you want to edit recipe?" href="/recipes/<%= @recipe.id%>/edit">Edit Recipe</a></button></p>
+
+<p id="show-delete-button"><button id="delete_button_show"><a data-confirm="Are you sure you want to delete recipe?" data-method="delete" href="/recipes/<%= @recipe.id%>" rel="nofollow">Delete Recipe</a></button></p>

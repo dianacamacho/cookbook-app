@@ -1,10 +1,25 @@
 <h1>Cookbook</h1>
 
+<div class="row">
 <% @recipes.each do |recipe| %>
-  <h2><%= recipe.title %></h2>
-  <h2><%= recipe.chef %></h2>
-  <h2><%= recipe.ingredients %></h2>
-  <h2><%= recipe.directions %></h2>
-  <hr>
+  <div class = "col-md-4">
+  <div class="thumbnail">
+    <h2><%= recipe.title %></h2>
+    <h3><%= recipe.chef %></h3>
+    <h3><%= recipe.ingredients %></h3>
+    <h3><%= recipe.directions %></h3>
+    <img src="<% recipe.image %>"/>
+    <%= image_tag recipe.image, class: "img-responsive" %>
+
+    <p id="show-edit-button"><button id="edit_button_show"><a data-confirm="Are you sure you want to edit recipe?" href="/recipes/<%= recipe.id%>/edit">Edit Recipe</a></button></p>
+
+    <p id="show-delete-button"><button id="delete_button_show"><a data-confirm="Are you sure you want to delete recipe?" data-method="delete" href="/recipes/<%= recipe.id%>" rel="nofollow">Delete Recipe</a></button></p>
+    </div>
+  </div>
+
+ 
+
 
 <% end %>
+
+</div>
