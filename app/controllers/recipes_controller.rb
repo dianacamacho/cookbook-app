@@ -1,15 +1,12 @@
 class RecipesController < ApplicationController
 
-  def meal
-    @recipe = Recipe.last
-  end
-
-  def every_meal
-    @recipes = Recipe.all
-  end
-
   def index
     @recipes = Recipe.all
+
+    if params[:sort]
+      @recipes = Recipe.order(:prep_time)
+    end
+
   end
 
   def show
